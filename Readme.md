@@ -21,3 +21,18 @@ npm install
 ```
 npm run wdio
 ```
+
+## Report
+
+
+To create Allure report
+
+```
+npm run report-generate
+```
+
+To open Allure report
+
+```
+npm run report-open
+```
