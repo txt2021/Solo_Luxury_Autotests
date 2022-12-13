@@ -13,6 +13,10 @@ class Page {
         await ((await $(locator)).toBeDisplayed());
     }
 
+    async isclickable(locator){
+        await ((await $(locator)).toBeClickable());
+    }
+
     async checkElement(locator,text) {
         await ((await $(locator)).toHaveText(text));
     }

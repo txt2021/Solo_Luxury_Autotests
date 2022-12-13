@@ -68,7 +68,6 @@ describe('Tests in Sign Up Page', () => {
       await loginpage.clickcreateAccountButton();
 
       await signuppage.scrollToSubmitButton();
-      //await signuppage.clickCoockieButton();
       await signuppage.clickcSubmitButton();
       await signuppage.isRequiredFieldsErrorsVisibleAndCorrect();
 
