@@ -38,6 +38,12 @@ class Page {
         await ((await $(locator)).moveTo());
     }
 
+    //await elem.dragAndDrop({ x: 100, y: 200 })
+
+    async dragAndDrop(locator){
+        await ((await $(locator)).dragAndDrop({ x: -100, y: 0 }));
+    }   
+
   
     async isdisplayedinViewPost(locator){
         await ((await $(locator)).isDisplayedInViewport());

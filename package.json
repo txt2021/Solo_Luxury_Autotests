@@ -13,9 +13,6 @@
     },
     "scripts": {
         "wdio": "wdio run wdio.conf.js",
-        "signup-tests": "wdio run wdio.conf.js --spec ./test/specs/sign_up.js",
-        "signin-tests": "wdio run wdio.conf.js --spec ./test/specs/login.js",
-        "recovery-tests": "wdio run wdio.conf.js --spec ./test/specs/password_recovery.js",
         "report-generate":"npx allure generate allure-results --clean",
         "report-open":"npx allure open allure-report"
     },
