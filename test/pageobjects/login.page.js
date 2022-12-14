@@ -1,7 +1,7 @@
 const page = require('./page')
 
 
-const create_an_accountButton = ('[class="actions-toolbar"]>div[class="primary"]>a[class="action create primary"]');
+const create_an_accountButton = ('[class="login-container"] [href*=create]');
 const user_email = ('[name="login[username]"]');
 const test_email = 'jebepi9455@ceoshub.com';
 const user_password = ('[name="login[password]"]');
