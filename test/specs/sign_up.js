@@ -9,7 +9,8 @@ beforeEach(async () => {
 
 describe('Tests in Sign Up Page', () => {   
   
-  it('Check the user failed registration with already existing email', async() => {   
+  it('Check the user failed registration with already existing email', async() => { 
+    await signuppage.clickCoockieButton();   
     await mainpage.clickpersonalAccountButton();
     await loginpage.clickcreateAccountButton();
 
@@ -21,7 +22,7 @@ describe('Tests in Sign Up Page', () => {
     await signuppage.enterDateOfBirth();
     await signuppage.enterDateOfMarrige();
     await signuppage.scrollToSubmitButton();
-    await signuppage.clickCoockieButton();
+    //await signuppage.clickCoockieButton();
     await signuppage.clickcSubmitButton();
     await signuppage.isErrorEmailMessageVisible();
     await signuppage.isErrorEmailMessageCorrect();   

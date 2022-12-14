@@ -9,11 +9,11 @@ beforeEach(async () => {
 
 describe('Tests in Password Recovery Page', () => {        
     it('Check the recovery confirmation with valid email', async() => {   
+      await signuppage.clickCoockieButton(); 
       await mainpage.clickpersonalAccountButton();
       await loginpage.clickcForgotPasswordButton();
 
       await recoverypage.enterEmail();
-      await signuppage.clickCoockieButton();
       await recoverypage.clickResetMyPasswordButton();
 
       await recoverypage.isSuccessRecoveryMessageVisible();

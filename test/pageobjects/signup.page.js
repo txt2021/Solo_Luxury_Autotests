@@ -69,6 +69,7 @@ class SignUpPage {
     }
 
     async clickCoockieButton(){
+        await page.waitForDisplayed(coockie_button);
         await page.click(coockie_button);        
     }
     

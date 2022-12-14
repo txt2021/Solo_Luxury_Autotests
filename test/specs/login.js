@@ -8,11 +8,12 @@ beforeEach(async () => {
 
 describe('Tests in Login Page', () => {        
     it('Check the user successful sign in with valid credentials', async() => {   
+     await signuppage.clickCoockieButton(); 
       await mainpage.clickpersonalAccountButton();
 
       await loginpage.enterEmail();
       await loginpage.enterPassword();
-      await signuppage.clickCoockieButton();
+      //await signuppage.clickCoockieButton();
       await loginpage.clickcSubmitButton();
       await loginpage.urlAccountChecking();
       

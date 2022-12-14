@@ -12,6 +12,11 @@ class Page {
     async isdisplayed(locator){
         await ((await $(locator)).toBeDisplayed());
     }
+    
+
+    async waitForDisplayed(locator){
+        await ((await $(locator)).waitForDisplayed());
+    }
 
     async isclickable(locator){
         await ((await $(locator)).toBeClickable());
