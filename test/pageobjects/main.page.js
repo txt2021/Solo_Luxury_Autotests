@@ -2,7 +2,7 @@ const page = require('./page')
 
 
 const personal_accountButton = ('[class="top-links-icon"]');
-const logout_button = ('[class="user-login-option"] ul>li:nth-child(1)>a>span')
+const logout_button = ('[id="switcher-language"]~div[class="top-links-area"] ul>li:nth-child(1)>a')
 
 class MainPage {
 

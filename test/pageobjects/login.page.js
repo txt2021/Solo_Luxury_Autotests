@@ -1,7 +1,7 @@
 const page = require('./page')
 
 
-const create_an_accountButton = ('#maincontent > div.columns > div > div:nth-child(4) > div.block.block-new-customer > div.block-content > div > div > a');
+const create_an_accountButton = ('[class="actions-toolbar"]>div[class="primary"]>a[class="action create primary"]');
 const user_email = ('[name="login[username]"]');
 const test_email = 'jebepi9455@ceoshub.com';
 const user_password = ('[name="login[password]"]');
@@ -16,7 +16,7 @@ const email_error_message_text = 'Please enter a valid email address (Ex: johndo
 const required_fields_errors = ['[id="email-error"]','[id="pass-error"]'];
 const required_fields_errors_text = 'This is a required field.';
 const forgot_password_button = ('[class="secondary cls_forget"] a');
-const facebook_button = ('//*[@id="maincontent"]/div[2]/div/div[1]/div/div[2]/div[1]/a');
+const facebook_button = ('[class="sociallogin-box"]>a[data-href*=facebook]');
 const twitter_button = ('span[class="pslogin-button-auto  "]');
 const google_button = ('//*[@id="maincontent"]/div[2]/div/div[1]/div/div[2]/div[2]/a');
 
@@ -82,11 +82,11 @@ class LoginPage {
     }
 
     async clickGoogleButton(){
-        await page.click(facebook_button);        
+        await page.click(google_button);        
     }
 
     async clickTwitterButton(){
-        await page.click(facebook_button);        
+        await page.click(twitter_button);        
     }
 
     async isMediaFormDisplayed(){
