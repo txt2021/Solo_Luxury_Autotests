@@ -15,12 +15,8 @@ jobs:
         node-version: '14.x'
     - name: Install dependencies
       run: npm ci
-    - name: Run Sign-Up tests
-      run: npm run signup-tests
-    - name: Run Sign-In tests
-      run: npm run signin-tests
-    - name: Run Password Recoverytests
-      run: npm run recovery-tests
+    - name: Run all tests
+      run: npm run wdio
     - uses: actions/checkout@v2
       if: always()
       with:
