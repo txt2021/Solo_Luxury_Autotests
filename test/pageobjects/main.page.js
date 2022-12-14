@@ -12,7 +12,7 @@ class MainPage {
 
     async clickLogoutButton(){
             await page.click(logout_button);        
-            }
+        }
 
 }
 
