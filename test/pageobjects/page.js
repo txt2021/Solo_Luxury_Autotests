@@ -6,7 +6,7 @@ class Page {
     }
 
     async setvalue(locator,text){
-        await ((await $(locator)).addValue(text));
+        await ((await $(locator)).setValue(text));
     }
 
     async isdisplayed(locator){
@@ -38,7 +38,6 @@ class Page {
         await ((await $(locator)).moveTo());
     }
 
-    //await elem.dragAndDrop({ x: 100, y: 200 })
 
     async dragAndDrop(locator){
         await ((await $(locator)).dragAndDrop({ x: -100, y: 0 }));

@@ -45,6 +45,9 @@ Run Footer suite tests: ```npm run test-footer```
 Run Top Brands suite tests: ```npm run test-topbrands```
 
 
+Run Top Brands suite tests: ```npm run test-profile```
+
+
 ## Report
 
 

@@ -2,18 +2,21 @@ const signuppage = require('../pageobjects/signup.page')
 const mainpage = require('../pageobjects/main.page'); 
 const loginpage = require('../pageobjects/login.page'); 
 
+before(async () => {
+    await browser.url('/'); 
+    await signuppage.clickCoockieButton();
+});
+
 beforeEach(async () => {
   await browser.url('/'); 
 });
 
 describe('Tests in Login Page', () => {        
     it('Check the user successful sign in with valid credentials', async() => {   
-     await signuppage.clickCoockieButton(); 
       await mainpage.clickpersonalAccountButton();
 
       await loginpage.enterEmail();
       await loginpage.enterPassword();
-      //await signuppage.clickCoockieButton();
       await loginpage.clickcSubmitButton();
       await loginpage.urlAccountChecking();
       

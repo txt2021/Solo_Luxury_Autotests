@@ -1,13 +1,18 @@
 const signuppage = require('../pageobjects/signup.page') 
 const mainpage = require('../pageobjects/main.page'); 
 
+before(async () => {
+    await browser.url('/'); 
+    await signuppage.clickCoockieButton();
+});
+
 beforeEach(async () => {
   await browser.url('/'); 
 });
 
 describe('Tests for Top Brands on the main page', () => {        
     it('Check the functionality of brand link on the main page', async() => {  
-        await signuppage.clickCoockieButton();
+        
         await mainpage.isBrandLinkClickable();
         
         await mainpage.clickBrandLink();

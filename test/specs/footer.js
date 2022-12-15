@@ -1,13 +1,17 @@
 const signuppage = require('../pageobjects/signup.page') 
 const mainpage = require('../pageobjects/main.page'); 
 
+before(async () => {
+    await browser.url('/'); 
+    await signuppage.clickCoockieButton();
+});
+
 beforeEach(async () => {
   await browser.url('/'); 
 });
 
 describe('Tests for functionalities in the main page footer', () => {        
     it('Check the user successful subscription submission with valid data', async() => {  
-        await signuppage.clickCoockieButton();
         await mainpage.enterNewsletterEmail();
         await mainpage.clickSubscribeButton();
 

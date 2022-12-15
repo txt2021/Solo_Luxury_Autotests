@@ -21,6 +21,7 @@
         "test-request": "npx wdio run wdio.conf.js --spec ./test/specs/special_request.js",
         "test-footer": "npx wdio run wdio.conf.js --spec ./test/specs/footer.js",
         "test-topbrands": "npx wdio run wdio.conf.js --spec ./test/specs/top_brands.js",
+        "test-profile": "npx wdio run wdio.conf.js --spec ./test/specs/user_profile.js",
         "report-generate":"npx allure generate allure-results --clean",
         "report-open":"npx allure open allure-report"
     },

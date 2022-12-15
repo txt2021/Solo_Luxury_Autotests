@@ -2,13 +2,17 @@ const signuppage = require('../pageobjects/signup.page')
 const mainpage = require('../pageobjects/main.page'); 
 const searchpage = require('../pageobjects/search.page'); 
 
+before(async () => {
+    await browser.url('/'); 
+    await signuppage.clickCoockieButton();
+});
+
 beforeEach(async () => {
   await browser.url('/'); 
 });
 
 describe('Tests for Search functionality', () => {        
     it('Check the search button functionality on the search field', async() => { 
-      await signuppage.clickCoockieButton(); 
       await mainpage.clickSearchIcon();      
       await mainpage.enterSearchKeyword();     
       

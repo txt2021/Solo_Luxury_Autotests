@@ -3,13 +3,17 @@ const mainpage = require('../pageobjects/main.page');
 const loginpage = require('../pageobjects/login.page'); 
 const recoverypage = require('../pageobjects/recovery.page'); 
 
+before(async () => {
+  await browser.url('/'); 
+  await signuppage.clickCoockieButton();
+});
+
 beforeEach(async () => {
   await browser.url('/'); 
 });
 
 describe('Tests in Password Recovery Page', () => {        
     it('Check the recovery confirmation with valid email', async() => {   
-      await signuppage.clickCoockieButton(); 
       await mainpage.clickpersonalAccountButton();
       await loginpage.clickcForgotPasswordButton();
 

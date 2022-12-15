@@ -3,14 +3,18 @@ const signuppage = require('../pageobjects/signup.page')
 const mainpage = require('../pageobjects/main.page'); 
 const loginpage = require('../pageobjects/login.page'); 
 
+before(async () => {
+  await browser.url('/'); 
+  await signuppage.clickCoockieButton();
+});
+
 beforeEach(async () => {
   await browser.url('/'); 
 });
 
 describe('Tests in Sign Up Page', () => {   
   
-  it('Check the user failed registration with already existing email', async() => { 
-    await signuppage.clickCoockieButton();   
+  it('Check the user failed registration with already existing email', async() => {
     await mainpage.clickpersonalAccountButton();
     await loginpage.clickcreateAccountButton();
 
@@ -22,7 +26,6 @@ describe('Tests in Sign Up Page', () => {
     await signuppage.enterDateOfBirth();
     await signuppage.enterDateOfMarrige();
     await signuppage.scrollToSubmitButton();
-    //await signuppage.clickCoockieButton();
     await signuppage.clickcSubmitButton();
     await signuppage.isErrorEmailMessageVisible();
     await signuppage.isErrorEmailMessageCorrect();   
@@ -50,12 +53,9 @@ describe('Tests in Sign Up Page', () => {
       await signuppage.enterDateOfBirth();
       await signuppage.enterDateOfMarrige();
       await signuppage.scrollToSubmitButton();
-      //await signuppage.clickCoockieButton();
       await signuppage.clickcSubmitButton();
       await signuppage.urlUserChecking();   
       
-      //await mainpage.clickpersonalAccountButton();
-      //await mainpage.clickLogoutButton(); 
     });
 
     it('Check the successful registration with empty optional fields', async() => {   
@@ -73,8 +73,6 @@ describe('Tests in Sign Up Page', () => {
       await signuppage.clickcSubmitButton();
       await signuppage.urlUserChecking();   
       
-      //await mainpage.clickpersonalAccountButton();
-      //await mainpage.clickLogoutButton(); 
     }); 
 
     

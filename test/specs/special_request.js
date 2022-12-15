@@ -2,13 +2,17 @@ const signuppage = require('../pageobjects/signup.page')
 const mainpage = require('../pageobjects/main.page'); 
 const specialRequestpage = require('../pageobjects/special_request.page'); 
 
+before(async () => {
+    await browser.url('/'); 
+    await signuppage.clickCoockieButton();
+});
+
 beforeEach(async () => {
   await browser.url('/'); 
 });
 
 describe('Tests for Special Request Functionality', () => {        
     it('Check the successful special request creation', async() => {  
-        await signuppage.clickCoockieButton();
         await mainpage.clickSpecialRequestButton();
         await specialRequestpage.enterUserName();
         await specialRequestpage.enterUserLastname();

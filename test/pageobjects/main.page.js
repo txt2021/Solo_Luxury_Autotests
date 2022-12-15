@@ -3,6 +3,7 @@ const page = require('./page')
 
 const personal_accountButton = ('[class="top-links-icon"]');
 const logout_button = ('[class="user-login-option"] a[href*="logout"]');
+const my_account_button = ('[class="user-login-option"]>ul>li:nth-child(2)>a');
 const search_icon = ('[class="search-area"]>a');
 const search_field = ('input[id="search"]');
 const search_text = 'Shoes';
@@ -58,6 +59,10 @@ class MainPage {
     async clickLogoutButton(){
             await page.click(logout_button);        
         }
+
+    async clickMyAccountButton(){
+        await page.click(my_account_button);        
+    }
 
     async clickSearchIcon(){
             await page.click(search_icon);        
