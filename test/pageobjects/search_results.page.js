@@ -26,7 +26,8 @@ class SeacrhResultsPage {
     }
 
     async clickcOnBrand(){
-        await page.click(price_button);        
+        await page.waitForDisplayed(brand_link);
+        await page.click(brand_link);        
     }
 
     async clickcCategoryButton(){
@@ -38,6 +39,7 @@ class SeacrhResultsPage {
     }
 
     async clickClearCategoryButton(){
+        await page.waitForDisplayed(clear_category_button);
         await page.click(clear_category_button);        
     }
 
@@ -51,14 +53,17 @@ class SeacrhResultsPage {
     }
 
     async clickNameSortButton(){
+        await page.waitForDisplayed(sort_by_name_button);
         await page.click(sort_by_name_button);        
     }
 
     async clickCreateTicketButton(){
+        await page.waitForDisplayed(create_ticket_button);
         await page.click(create_ticket_button);        
     }
 
     async clickContinueShoppingButton(){
+        await page.waitForDisplayed(continue_shopping_button);
         await page.click(continue_shopping_button);        
     }
     

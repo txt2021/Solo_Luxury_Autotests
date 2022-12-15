@@ -8,6 +8,7 @@ const search_field = ('input[id="search"]');
 const search_text = 'Shoes';
 const invalid_search_text = 'Взуття';
 const search_button = ('[id="search_mini_form"]');
+const special_request_button = ('[id="myspecialreq"]');
 
 class MainPage {
 
@@ -26,6 +27,10 @@ class MainPage {
     async clickSearchButton(){
             await page.click(search_button);        
         }
+    
+    async clickSpecialRequestButton(){
+        await page.click(special_request_button);        
+    }
 
     async enterSearchKeyword(){
             await page.setvalue(search_field,search_text);     
