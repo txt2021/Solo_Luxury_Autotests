@@ -18,9 +18,32 @@ npm install
 ```
 
 ## Run
-```
-npm run wdio
-```
+Run all tests: ```npm run wdio```
+
+
+Run User Registration suite tests: ```npm run test-signup```
+
+
+Run User Login suite tests: ```npm run test-login```
+
+
+Run Password Recovery suite tests: ```npm run test-recovery```
+
+
+Run Search suite tests: ```npm run test-search```
+
+
+Run Search Results suite tests: ```npm run test-searchresults```
+
+
+Run Special Request suite tests: ```npm run test-request```
+
+
+Run Footer suite tests: ```npm run test-footer```
+
+
+Run Top Brands suite tests: ```npm run test-topbrands```
+
 
 ## Report
 

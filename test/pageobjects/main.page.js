@@ -29,6 +29,9 @@ const company_button = ('[class="col-lg-2"]:nth-child(4)>div strong');
 const testimonials_button = ('[class="col-lg-2"]:nth-child(4)>div ul>li:nth-child(4)>a');
 const error_message = ('[id="authenticationPopup"]~div h3');
 
+const logo_button = ('[class="logo"]');
+const show_all_brands_button = ('[class="home-brands-list"]>a:nth-child(24)');
+
 
 class MainPage {
 
@@ -88,6 +91,10 @@ class MainPage {
         await page.click(testimonials_button);        
     }
 
+    async clickShowAllBrandsButton(){
+        await page.click(show_all_brands_button);        
+    }
+
     async enterSearchKeyword(){
             await page.setvalue(search_field,search_text);     
         }
@@ -144,6 +151,25 @@ class MainPage {
 
     async urlTestimonialsChecking(){
         await (expect(page.urlChecking('testimonials'))) || (expect(page.isdisplayed(error_message)));
+    }
+
+    async urlAllBrandsChecking(){
+        await (expect(page.urlChecking('brands')));
+    }
+
+    async isBrandLinkClickable(){
+        for(let i = 1; i<=24;i++){
+            await (expect(page.isclickable(`[class="home-brands-list"]>a:nth-child(${i})`)));
+            i++
+        }              
+    }
+
+    async clickBrandLink(){
+        for(let i = 1; i<=24;i++){
+            await page.click(`[class="home-brands-list"]>a:nth-child(${i})`);
+            await page.click(logo_button); 
+            i+=3;
+        }              
     }
 
 }
