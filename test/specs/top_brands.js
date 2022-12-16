@@ -2,7 +2,8 @@ const signuppage = require('../pageobjects/signup.page')
 const mainpage = require('../pageobjects/main.page'); 
 
 before(async () => {
-    await browser.url('/'); 
+    await browser.url('/');
+    await mainpage.clickLanguageButton(); 
     await signuppage.clickCoockieButton();
 });
 

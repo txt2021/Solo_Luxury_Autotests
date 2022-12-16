@@ -33,6 +33,8 @@ const error_message = ('[id="authenticationPopup"]~div h3');
 const logo_button = ('[class="logo"]');
 const show_all_brands_button = ('[class="home-brands-list"]>a:nth-child(24)');
 
+const name_button = ('#first-login-modal > ul > li:nth-child(1) > a');
+
 
 class MainPage {
 
@@ -50,6 +52,11 @@ class MainPage {
 
     async hoverToSocial(){
         await page.hover(social_button);
+    }
+
+    async clickLanguageButton(){
+            await page.click(name_button);    
+        
     }
 
     async clickpersonalAccountButton(){
