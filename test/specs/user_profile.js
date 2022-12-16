@@ -7,10 +7,7 @@ before(async () => {
     await browser.url('/'); 
     //await mainpage.clickLanguageButton();
     await signuppage.clickCoockieButton();
-    await mainpage.clickpersonalAccountButton();
-    await loginpage.enterEmail();
-    await loginpage.enterPassword();
-    await loginpage.clickcSubmitButton();    
+      
   });
 
 beforeEach(async () => {
@@ -19,6 +16,10 @@ beforeEach(async () => {
 
 describe('Tests for User Profile', () => {        
     it('Check the ability to update profile name', async() => {  
+        await mainpage.clickpersonalAccountButton();
+        await loginpage.enterEmail();
+        await loginpage.enterPassword();
+        await loginpage.clickcSubmitButton();  
         await mainpage.clickpersonalAccountButton();
         await mainpage.clickMyAccountButton();
         await userprofilepage.clickEditButton();

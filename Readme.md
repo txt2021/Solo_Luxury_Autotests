@@ -48,8 +48,10 @@ Run Top Brands suite tests: ```npm run test-topbrands```
 Run Top Brands suite tests: ```npm run test-profile```
 
 
-Run Top Brands suite tests: ```npm run test-wishlist``
+Run Wishlist suite tests: ```npm run test-wishlist``
 
+
+Run Localization suite tests: ```npm run test-localization``
 
 ## Report
 

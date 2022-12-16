@@ -2,7 +2,6 @@ const signuppage = require('../pageobjects/signup.page')
 const mainpage = require('../pageobjects/main.page');  
 const loginpage = require('../pageobjects/login.page');  
 const wishlistpage = require('../pageobjects/wishlist.page'); 
-const searchpage = require('../pageobjects/search.page'); 
 
 before(async () => {
     await browser.url('/'); 
