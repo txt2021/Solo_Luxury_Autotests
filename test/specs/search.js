@@ -4,7 +4,7 @@ const searchpage = require('../pageobjects/search.page');
 
 before(async () => {
     await browser.url('/'); 
-    //await mainpage.clickLanguageButton();
+    await mainpage.clickLanguageButton();
     await signuppage.clickCoockieButton();
 });
 
