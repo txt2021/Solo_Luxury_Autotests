@@ -50,7 +50,7 @@ const travel_bag_subcategory = ('//*[@id="ui-id-224"]');//223
 const whats_new_menu_category = ('[class="ui-menu-item level0"]');
 const brands_menu_category = ('li>[href$="brands/"]');
 
-const minicart_icon = ('[class="minicart-wrapper"]>a');
+const minicart_icon = /*('[class="action showcart"]')*/('div[data-block="minicart"]');
 const close_minicart_button = ('button[id="btn-minicart-close"]')
 
 class MainPage {
@@ -194,6 +194,7 @@ class MainPage {
 
 
     async clickOpenMenuButton(){
+        await page.scrollIntoView(open_menu_button);
         await page.click(open_menu_button);
     }
 
