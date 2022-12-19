@@ -22,6 +22,8 @@ const continue_shopping_button = ('[id="create-ticket-btn"]~a');
 class SeacrhResultsPage {
 
     async clickcItemCard(){
+        await page.scrollIntoView(result_item_card);
+        await page.waitForDisplayed(result_item_card);
         await page.click(result_item_card);        
     }
 
@@ -58,11 +60,13 @@ class SeacrhResultsPage {
     }
 
     async clickCreateTicketButton(){
+        await page.scrollIntoView(create_ticket_button);
         await page.waitForDisplayed(create_ticket_button);
         await page.click(create_ticket_button);        
     }
 
     async clickContinueShoppingButton(){
+        await page.scrollIntoView(continue_shopping_button);
         await page.waitForDisplayed(continue_shopping_button);
         await page.click(continue_shopping_button);        
     }

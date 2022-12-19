@@ -43,6 +43,8 @@ class LoginPage {
     }
 
     async clickcSubmitButton(){
+        await page.scrollIntoView(submit_button);
+        await page.waitForDisplayed(submit_button);
         await page.click(submit_button);        
     }
 

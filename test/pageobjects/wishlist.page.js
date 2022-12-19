@@ -20,6 +20,8 @@ const cart_item_area = ('#shopping-cart-table > tbody > tr > td.col.item > div')
 class WishListPage {
 
     async clickWishListIcon(){
+        await page.scrollIntoView(wishlist_icon);
+        await page.waitForDisplayed(wishlist_icon);
         await page.click(wishlist_icon);        
     }
 
@@ -29,7 +31,8 @@ class WishListPage {
 
 
     async clickAddToWishListButton(){
-        await page.scrollIntoView(add_to_wishlist_button)
+        await page.scrollIntoView(add_to_wishlist_button);
+        await page.waitForDisplayed(add_to_wishlist_button);
         await page.click(add_to_wishlist_button);        
     }
 
@@ -38,20 +41,25 @@ class WishListPage {
     }
 
     async clickItemCard(){
-        await page.scrollIntoView(result_item_card)
+        await page.scrollIntoView(result_item_card);
+        await page.waitForDisplayed(result_item_card);
         await page.click(result_item_card);        
     }
 
     async clickSecondItemCard(){
-        await page.scrollIntoView(result_item_card2)
+        await page.scrollIntoView(result_item_card2);
+        await page.waitForDisplayed(result_item_card2);
         await page.click(result_item_card2);        
     }
 
     async clickOptionsDropdown(){
+        await page.scrollIntoView(options_dropdown);
+        await page.waitForDisplayed(options_dropdown);
         await page.click(options_dropdown);        
     }
 
     async clickFirstOptionButton(){
+        await page.waitForDisplayed(first_option);
         await page.click(first_option);        
     }
 
@@ -60,7 +68,8 @@ class WishListPage {
     }
 
     async clickAddAllToCartButton(){
-        await page.scrollIntoView(add_all_to_cart_butto)
+        await page.scrollIntoView(add_all_to_cart_butto);
+        await page.waitForDisplayed(add_all_to_cart_butto);
         await page.click(add_all_to_cart_butto);        
     }
 
