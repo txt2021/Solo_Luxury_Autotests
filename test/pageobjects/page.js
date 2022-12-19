@@ -9,6 +9,10 @@ class Page {
         await ((await $(locator)).setValue(text));
     }
 
+    async getText(locator){
+        await ((await $(locator)).getText());
+    }
+
     async isdisplayed(locator){
         await ((await $(locator)).toBeDisplayed());
     }

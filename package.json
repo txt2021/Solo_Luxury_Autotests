@@ -24,6 +24,7 @@
         "test-profile": "npx wdio run wdio.conf.js --spec ./test/specs/user_profile.js",
         "test-wishlist": "npx wdio run wdio.conf.js --spec ./test/specs/wishlist.js",
         "test-localization": "npx wdio run wdio.conf.js --spec ./test/specs/localization.js",
+        "test-productpage": "npx wdio run wdio.conf.js --spec ./test/specs/product_page.js",
         "report-generate":"npx allure generate allure-results --clean",
         "report-open":"npx allure open allure-report"
     },

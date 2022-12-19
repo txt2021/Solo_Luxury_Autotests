@@ -53,6 +53,9 @@ Run Wishlist suite tests: ```npm run test-wishlist``
 
 Run Localization suite tests: ```npm run test-localization``
 
+
+Run Product Page suite tests: ```npm run test-productpage``
+
 ## Report
 
 
