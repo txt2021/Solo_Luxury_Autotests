@@ -14,7 +14,7 @@ beforeEach(async () => {
 });
 
 describe('Tests for Product Page', () => {        
-    xit('Check the redirecting to the particular product page', async() => {  
+    it('Check the redirecting to the particular product page', async() => {  
         await mainpage.clickSearchIcon();      
         await mainpage.enterSearchKeyword(); 
         await browser.keys("\uE007");
@@ -23,7 +23,7 @@ describe('Tests for Product Page', () => {
         await productpage.urlItemChecking();  
     });  
 
-    xit('Check the visibility of product image and name', async() => {  
+    it('Check the visibility of product image and name', async() => {  
         await mainpage.clickSearchIcon();      
         await mainpage.enterSearchKeyword(); 
         await browser.keys("\uE007");
@@ -33,7 +33,7 @@ describe('Tests for Product Page', () => {
         await productpage.isItemNameVisible();  
     });  
 
-    xit('Check the ability to choose the different option of the product (size,color,etc.)', async() => {  
+    it('Check the ability to choose the different option of the product (size,color,etc.)', async() => {  
         await mainpage.clickSearchIcon();      
         await mainpage.enterSearchKeyword(); 
         await browser.keys("\uE007");
@@ -44,7 +44,7 @@ describe('Tests for Product Page', () => {
         await productpage.isChosenOptionVisible();
     });  
 
-    xit('Check the ability to add product to the shopping cart', async() => {  
+    it('Check the ability to add product to the shopping cart', async() => {  
         await mainpage.clickSearchIcon();      
         await mainpage.enterSearchKeyword(); 
         await browser.keys("\uE007");
@@ -59,7 +59,7 @@ describe('Tests for Product Page', () => {
 
     });
 
-    xit('Check the ability to add product to the wishlist', async() => {  
+    it('Check the ability to add product to the wishlist', async() => {  
         await mainpage.clickSearchIcon();      
         await mainpage.enterSearchKeyword(); 
         await browser.keys("\uE007");

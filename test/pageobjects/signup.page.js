@@ -36,7 +36,7 @@ class SignUpPage {
     }
 
     async enterEmail(){
-        await page.setvalue(user_email,randomEmail());     
+        await page.setvalue(user_email,randomEmail({ domain: 'example.com' }));     
     }
 
     async enterInvalidEmail(){
