@@ -4,7 +4,7 @@ const localizationpage = require('../pageobjects/localization.page');
 
 before(async () => {
     await browser.url('/'); 
-    //await mainpage.clickLanguageButton();
+    await mainpage.clickLanguageButton();
     await signuppage.clickCoockieButton();
        
   });
