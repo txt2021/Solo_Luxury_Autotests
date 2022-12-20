@@ -4,7 +4,7 @@ const specialRequestpage = require('../pageobjects/special_request.page');
 
 before(async () => {
     await browser.url('/'); 
-    await mainpage.clickLanguageButton();
+    //await mainpage.clickLanguageButton();
     await signuppage.clickCoockieButton();
 });
 
