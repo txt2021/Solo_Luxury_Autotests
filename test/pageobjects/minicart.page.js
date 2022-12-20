@@ -1,8 +1,8 @@
 const page = require('./page')
 
 const cart_form = ('div[id="ui-id-228"]');
-const cart_button = /*('[class*="action showcart"]')*/('[class="action viewcart"]');
-const close_select_language_button = ('[id="modal-title-0"]~[data-role="closeBtn"]');
+const cart_button = ('[class="action viewcart"]');
+const close_select_language_button = ('[id="modal-title-0"]~[data-role="closeBtn"]')/*('aside:nth-child(1)>div:nth-child(2)>header>button')*/;
 const donate_button = ('div[class="donateBtn"]');
 const charity_form = ('div[class="modal-inner-wrap"]>header>h1');
 const charity_text = 'CHARITY TEST';
@@ -11,7 +11,7 @@ const continue_shopping_button = ('div[class="cart-empty"] [href="https://www.so
 const item_icon = ('li[class$="nth-child-6np1 nth-child-7n"]');
 const add_to_cart_button = ('[id="product-addtocart-button"] i[class$="shopping-cart"]');
 const view_cart_button = ('[class*="btn-viewcart"]');
-const shopping_cart_table = ('id="shopping-cart-table"');
+const shopping_cart_table = ('[id="shopping-cart-table"]');
 const cart_quantity_plus_button = ('[class*="ajax-cart-qty-plus"]');
 const cart_quantity_value = ('[id="cart-2610-qty"]');
 const popup_continue_shopping_button = ('[class="btn-continue"]');
@@ -20,12 +20,20 @@ const option_select = ('[id="attribute167"]');
 const size_42_option = ('[value="7625"]');
 const accept_button = ('[class$="action-accept"]');
 const item_on_cart = ('//tbody[1]/tr/td[1]/a');
+const buy_now_button = ('.buynow-button #buy-now');
+
+const item_price = ('//td[2]/span/span/span');
+const shipping_method = ('[class="row amcheckout-method -selected"] [class="price"]>[class="price"]');
+const go_checkout_button = ('[data-role="proceed-to-checkout"]');
+const order_total_price = ('[class="grand totals"] [class="price"]');
 
 let count = 0;
 let quantity = 0;
-let temp;
+let subtotal = 0;
+let total = 0;
+let order_total = 0;
 let cart_item = ('//*[@id="shopping-cart-table"]/tbody[{count}]');
-let remove_item_button = ('//*[@id="shopping-cart-table"]/tbody[{count}]/tr/td[5]/div/a[2]')
+let remove_item_button = ('//*[@id="shopping-cart-table"]/tbody[{count}]/tr/td[5]/div/a[2]');
 
 class MinicartPage {
 
@@ -139,6 +147,73 @@ class MinicartPage {
     async ItemUrlChecking(){
         await (expect(page.urlChecking('t-shirts-alexander-mcqueen-graffiti-logo-t-shirt')));
     }
+
+
+    async clickBuyNowButton(){
+        await page.scrollIntoView(buy_now_button);
+        await page.click(buy_now_button);
+    }
+
+    async Subtotal(locator){
+        let item_price = await $(locator);
+
+        await page.waitForDisplayed(item_price);
+
+        let price = (await item_price.getText()).replace(/^\D+/g, "");
+        price = price.replace(/\,/g,'');
+        price = Number(price);
+
+        subtotal = price * quantity;
+        return subtotal;
+    }
+
+    async OrderTotal(locator){
+        let shipping_method = await $(locator);
+
+        await page.waitForDisplayed(shipping_method);
+
+        let shipping = (await shipping_method.getText()).replace(/^\D+/g, "");
+        shipping = shipping.replace(/\,/g,'');
+        shipping = Number(shipping);
+
+        let order_total = subtotal + shipping;
+        total = order_total;
+        return total;
+    }
+
+    async OrderTotalOnCheckout(locator){
+        let order_total_price = await $(locator);
+
+        await page.waitForDisplayed(order_total_price);
+
+        let order = (await order_total_price.getText()).replace(/^\D+/g, "");
+        order = order.replace(/\,/g,'');
+        order = Number(order);
+
+        order_total = order;
+        return order_total;
+    }
+
+    async checkSubtotal(){
+        await this.Subtotal(item_price);
+    }
+
+    async checkOrdertotal(){
+        await this.OrderTotal(shipping_method);
+    }
+
+    async checkOrdertotalOnCheckout(){
+        await this.OrderTotalOnCheckout(order_total_price);
+    }
+
+    async clickGoCheckoutButton(){
+        await page.click(go_checkout_button);
+    }
+
+    async Checking(){
+        (expect(total).toEqual(order_total));
+    }
+
 }
 
 module.exports = new MinicartPage();

@@ -36,7 +36,7 @@ const open_menu_button = ('[id="open-menu"]');
 const close_menu_button = ('[id="close-menu"]');
 
 const women_menu_category = ('li>[href$="women.html"]');
-const men_menu_category = ('//*[@id="ui-id-3"]');
+const men_menu_category = /*('//*[@id="ui-id-3"]')*/('nav>ul>li:nth-child(2)>a>span:nth-child(2)');
 const kids_menu_category = ('//*[@id="ui-id-4"]');
 const sale_menu_category = ('//*[@id="ui-id-5"]');
 const heels_menu_category = ('//*[@id="ui-id-9"]');//6
@@ -50,7 +50,7 @@ const travel_bag_subcategory = ('//*[@id="ui-id-224"]');//223
 const whats_new_menu_category = ('[class="ui-menu-item level0"]');
 const brands_menu_category = ('li>[href$="brands/"]');
 
-const minicart_icon = /*('[class="action showcart"]')*/('div[data-block="minicart"]');
+const minicart_icon = /*('[class="action showcart"]')*//*('div[data-block="minicart"]')*/('//*/div[2]/div[6]');
 const close_minicart_button = ('button[id="btn-minicart-close"]')
 
 class MainPage {

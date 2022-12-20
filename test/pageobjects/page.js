@@ -6,7 +6,11 @@ class Page {
     }
 
     async setvalue(locator,text){
-        await ((await $(locator)).addValue(text));
+        await ((await $(locator)).setValue(text));
+    }
+
+    async getText(locator){
+        await ((await $(locator)).getText());
     }
 
     async isdisplayed(locator){
@@ -38,7 +42,6 @@ class Page {
         await ((await $(locator)).moveTo());
     }
 
-    //await elem.dragAndDrop({ x: 100, y: 200 })
 
     async dragAndDrop(locator){
         await ((await $(locator)).dragAndDrop({ x: -100, y: 0 }));
@@ -55,6 +58,10 @@ class Page {
 
     async isexisting(locator){
         await ((await $(locator)).toBeExisting());
+    }
+
+    async gettext(locator){
+        await ((await $(locator)).getText());
     }
 
 }
