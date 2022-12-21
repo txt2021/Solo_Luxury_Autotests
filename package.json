@@ -9,7 +9,8 @@
         "@wdio/mocha-framework": "^8.0.13",
         "@wdio/spec-reporter": "^8.0.13",
         "chromedriver": "^108.0.0",
-        "wdio-chromedriver-service": "^8.0.1"
+        "wdio-chromedriver-service": "^8.0.1",
+        "wdio-intercept-service": "^4.3.0"
     },
     "scripts": {
         "wdio": "wdio run ./wdio.conf.js",
@@ -24,6 +25,7 @@
         "test-menu": "npx wdio run wdio.conf.js --spec ./test/specs/menu.js",
         "test-shoppingcart": "npx wdio run wdio.conf.js --spec ./test/specs/shopping_cart.js",
         "test-checkout": "npx wdio run wdio.conf.js --spec ./test/specs/checkout.js",
+        "test-returnandcancel": "npx wdio run wdio.conf.js --spec ./test/specs/return_and_cancel.js",
         "report-generate": "npx allure generate allure-results --clean",
         "report-open": "npx allure open allure-report"
     },

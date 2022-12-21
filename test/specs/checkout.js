@@ -5,14 +5,17 @@ const checkoutpage = require('../pageobjects/checkout.page');
 
 
 beforeEach(async () => {
-    await browser.reloadSession();
     await browser.url('/');
-    await minicartpage.clickCloseSelectLanguageButton();
-    await signuppage.clickCoockieButton();
+});
+
+afterEach(async () => {
+    await browser.reloadSession();
 });
 
 describe('Checkout Tests', () => {        
     it('Check the product information on checkout page', async() => { 
+        await minicartpage.clickCloseSelectLanguageButton();
+        await signuppage.clickCoockieButton();
         await mainpage.clickOpenMenuButton();
         await browser.pause(1000);
         await mainpage.clickMenMenuCategory();
@@ -72,19 +75,14 @@ describe('Checkout Tests', () => {
     });
 
     it('Check the cancel button is available for checkout', async() => {
-        await minicartpage.clickCloseSelectLanguageButton();
-        await signuppage.clickCoockieButton(); 
         await checkoutpage.buyNowItemFromMenCategory();
 
         await minicartpage.urlCartChecking();
         await browser.back();
         await checkoutpage.urlCatalogProductView();
-
     });
 
     it('Check the correctness of the total price on checkout page', async() => {
-        await minicartpage.clickCloseSelectLanguageButton();
-        await signuppage.clickCoockieButton(); 
         await mainpage.clickOpenMenuButton();
         await browser.pause(1000);
         await mainpage.clickMenMenuCategory();
@@ -105,8 +103,6 @@ describe('Checkout Tests', () => {
     });
 
     it('Check the successsful order creation', async() => {
-        await minicartpage.clickCloseSelectLanguageButton();
-        await signuppage.clickCoockieButton(); 
         await checkoutpage.buyNowItemFromMenCategory();
 
         await checkoutpage.mandatoryFieldsFill();
@@ -115,8 +111,6 @@ describe('Checkout Tests', () => {
     });
 
     it('Check the order number on the my orders page', async() => {
-        await minicartpage.clickCloseSelectLanguageButton();
-        await signuppage.clickCoockieButton(); 
         await checkoutpage.clickLoginItem();
         await checkoutpage.enterEmailSignIn();
         await checkoutpage.enterPasswordSignIn();

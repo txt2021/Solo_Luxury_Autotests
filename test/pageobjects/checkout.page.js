@@ -4,7 +4,7 @@ const minicartpage = require('../pageobjects/minicart.page');
 
 const product_item_name = ('[class="product-item-details"] [class$="block"]>[class="product-item-name"]');
 const product_quantity = ('[class="product-item-details"] [class$="block"]>[class="details-qty"]>[class="value"]');
-const email_address = /*('[class="field required"] [type="email"]')*/('div>li>div>div>form:nth-child(1)>fieldset>div>div>input');
+const email_address = ('div>li>div>div>form:nth-child(1)>fieldset>div>div>input');
 const test_email = 'jebepi9455@ceoshub.com';
 const test_invalid_email = 'jebepi9455';
 const email_error = ('[id="customer-email-error"]');
@@ -22,7 +22,7 @@ const test_telephone = '689334718';
 const cash_payment_method = ('label[for="cashondelivery"]');
 const free_shipping_method = ('//*[@id="checkout-shipping-method-load"]/table/tbody/tr[1]');
 const place_order_button = ('//*/div[4]/div/div/button');
-const payment_validation_error = /*('//aside[8]/div[2]/div')*/('div.modals-wrapper > aside.modal-popup.confirm._show');/////
+const payment_validation_error = ('div.modals-wrapper > aside.modal-popup.confirm._show');
 const login_item = ('[class="far fa-user"]');
 const email_for_signin = ('fieldset>div:nth-child(2)>div>input');
 const test_email_for_signin = 'ttq59187@cdfaq.com';
@@ -31,7 +31,12 @@ const test_password_for_signin = 'AsdFGghjkl1';
 const signin_button = ('fieldset>div:nth-child(4)>div:nth-child(1)>button');
 const my_account_button = ('[class="user-login-option"] li:nth-child(2)>a');
 const my_orders_section = ('[id="account-nav"]>ul>li:nth-child(2)>a');
+const my_ticets_section = ('[id="account-nav"]>ul>li:nth-child(11)>a');
 const order_table = ('[id="my-orders-table"]');
+
+const test_email_bond = 'kwa99604@cdfaq.com';
+const test_password_for_signin_bond = 'Rt!324gfR';
+
 
 class CheckoutPage {
 
@@ -115,12 +120,28 @@ class CheckoutPage {
         await page.click(login_item);
     }
 
-    async enterEmailSignIn(){
-        await page.setvalue(email_for_signin,test_email_for_signin);     
+    async enterEmail(locator,mail){
+        await page.setvalue(locator,mail);     
+    }
+
+    async enterEmailSignIn(locator,mail){
+        await this.enterEmail(email_for_signin,test_email_for_signin);     
+    }
+
+    async enterEmailSignInBond(locator,mail){
+        await this.enterEmail(email_for_signin,test_email_bond);     
+    }
+
+    async enterPassword(locator, password){
+        await page.setvalue(locator,password);     
     }
 
     async enterPasswordSignIn(){
         await page.setvalue(password_for_signin,test_password_for_signin);     
+    }
+
+    async enterPasswordSignInBond(){
+        await page.setvalue(password_for_signin,test_password_for_signin_bond);     
     }
 
     async clickSignInButton(){
@@ -133,6 +154,10 @@ class CheckoutPage {
 
     async clickMyOrdersSection(){
         await page.click(my_orders_section);
+    }
+
+    async clickMyTicketsSection(){
+        await page.click(my_ticets_section);
     }
 
     async isDisplayedOrderTable(){
