@@ -3,7 +3,12 @@ const mainpage = require('../pageobjects/main.page');
 const loginpage = require('../pageobjects/login.page'); 
 const userprofilepage = require('../pageobjects/user_profile.page'); 
 
-
+before(async () => {
+    await browser.url('/'); 
+    //await mainpage.clickLanguageButton();
+    await signuppage.clickCoockieButton();
+      
+  });
 
 beforeEach(async () => {
   await browser.url('/');   

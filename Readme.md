@@ -56,6 +56,18 @@ Run Localization suite tests: ```npm run test-localization``
 
 Run Product Page suite tests: ```npm run test-productpage``
 
+
+Run Menu suite tests: ```npm run test-menu``
+
+
+Run Shopping Cart suite tests: ```npm run test-shoppingcart``
+
+
+Run Checkout suite tests: ```npm run test-checkout``
+
+
+Run Cancel and Returns suite tests: ```npm run test-returns``
+
 ## Report
 
 

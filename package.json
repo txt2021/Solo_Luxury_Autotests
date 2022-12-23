@@ -25,6 +25,10 @@
         "test-wishlist": "npx wdio run wdio.conf.js --spec ./test/specs/wishlist.js",
         "test-localization": "npx wdio run wdio.conf.js --spec ./test/specs/localization.js",
         "test-productpage": "npx wdio run wdio.conf.js --spec ./test/specs/product_page.js",
+        "test-menu": "npx wdio run wdio.conf.js --spec ./test/specs/menu.js",
+        "test-shoppingcart": "npx wdio run wdio.conf.js --spec ./test/specs/shopping_cart.js",
+        "test-checkout": "npx wdio run wdio.conf.js --spec ./test/specs/checkout.js",
+        "test-returns": "npx wdio run wdio.conf.js --spec ./test/specs/checkout.js",
         "report-generate":"npx allure generate allure-results --clean",
         "report-open":"npx allure open allure-report"
     },

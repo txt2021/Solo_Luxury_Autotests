@@ -35,6 +35,27 @@ const show_all_brands_button = ('[class="home-brands-list"]>a:nth-child(24)');
 
 const name_button = ('#first-login-modal > ul > li:nth-child(1) > a');
 
+const open_menu_button = ('[id="open-menu"]');
+const close_menu_button = ('[id="close-menu"]');
+
+const women_menu_category = ('li>[href$="women.html"]');
+const men_menu_category = /*('//*[@id="ui-id-3"]')*/('nav>ul>li:nth-child(2)>a>span:nth-child(2)');
+const kids_menu_category = ('//*[@id="ui-id-4"]');
+const sale_menu_category = ('//*[@id="ui-id-5"]');
+const heels_menu_category = ('//*[@id="ui-id-9"]');//6
+const preowned_menu_category = ('//*[@id="ui-id-7"]');
+const tote_bags_menu_category = ('//*[@id="ui-id-11"]');//8-11
+const tote_bags_subcategory = ('//*[@id="ui-id-218"]');
+const satchel_menu_category = ('//*[@id="ui-id-12"]');//9
+const all_bags_subcategory = ('//*[@id="ui-id-221"]');//219
+const travel_bag_menu_category = ('//*[@id="ui-id-13"]');//10
+const travel_bag_subcategory = ('//*[@id="ui-id-224"]');//223
+const whats_new_menu_category = ('[class="ui-menu-item level0"]');
+const brands_menu_category = ('li>[href$="brands/"]');
+
+const minicart_icon = /*('[class="action showcart"]')*//*('div[data-block="minicart"]')*/('//*/div[2]/div[6]');
+const close_minicart_button = ('button[id="btn-minicart-close"]')
+
 
 class MainPage {
 
@@ -182,6 +203,79 @@ class MainPage {
             await page.click(logo_button); 
             i+=3;
         }              
+    }
+
+    async clickOpenMenuButton(){
+        await page.scrollIntoView(open_menu_button);
+        await page.click(open_menu_button);
+    }
+
+    async clickCloseMenuButton(){
+        await page.click(close_menu_button);
+    }
+
+    async clickWomenMenuCategory(){
+        await page.click(women_menu_category);
+    }
+
+    async clickMenMenuCategory(){
+        await page.click(men_menu_category);
+    }
+
+    async clickKidsMenuCategory(){
+        await page.click(kids_menu_category);
+    }
+
+    async clickSaleMenuCategory(){
+        await page.click(sale_menu_category);
+    }
+
+    async clickHeelsMenuCategory(){
+        await page.click(heels_menu_category);
+    }
+
+    async clickPreownedMenuCategory(){
+        await page.click(preowned_menu_category);
+    }
+
+    async hoverToToteBagsMenuCategory(){
+        await page.hover(tote_bags_menu_category);
+    }
+
+    async clickToteBagsSubcategory(){
+        await page.click(tote_bags_subcategory);
+    }
+
+    async hoverToSatchelMenuCategory(){
+        await page.hover(satchel_menu_category);
+    }
+
+    async clickAllBugsSubcategory(){
+        await page.click(all_bags_subcategory);
+    }
+
+    async hoverToTravelBagMenuCategory(){
+        await page.hover(travel_bag_menu_category);
+    }
+
+    async clickTravelBugSubcategory(){
+        await page.click(travel_bag_subcategory);
+    }
+
+    async clickWhatsNewMenuCategory(){
+        await page.click(whats_new_menu_category);
+    }
+
+    async clickBrandsMenuCategory(){
+        await page.click(brands_menu_category);
+    }
+
+    async clickShowcartIcon(){
+        await page.click(minicart_icon);        
+    }
+
+    async clickCloseMinicartButton(){
+        await page.click(close_minicart_button);        
     }
 
 }

@@ -52,5 +52,22 @@ class Page {
         await ((await $(locator)).isDisplayedInViewport());
     }
 
+    
+    async isdisplayedinViewPost(locator){
+        await ((await $(locator)).isDisplayedInViewport());
+    }
+
+    async haveattribute(locator,attribute,value){
+        await ((await $(locator)).toHaveAttribute(attribute,value));
+    }
+
+    async isexisting(locator){
+        await ((await $(locator)).toBeExisting());
+    }
+
+    async gettext(locator){
+        await ((await $(locator)).getText());
+    }
+
 }
 module.exports = new Page()
